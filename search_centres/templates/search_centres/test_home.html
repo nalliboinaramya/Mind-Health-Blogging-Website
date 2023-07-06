@@ -1,0 +1,36 @@
+<html>
+
+
+<h1>testing</h1>
+
+<form  id="mytest" class="form">
+
+<!--<label for="job_cat"></label>-->
+
+<input type="text" name="job_cat" id="job_cat" >
+
+
+
+<input type="text" name="locatn" id="locatn">
+
+<button type="submit">search</button> 
+
+</form>
+
+
+{% if result %}
+
+<h2>Done</h2>
+    <a href="{% url 'test' %}">
+        <button>
+            View Result
+        </button>
+    </a>
+
+{% endif %}
+
+{% if result_1 %}
+<h2>Please fill both fields</h2>
+{% endif %}
+
+</html>

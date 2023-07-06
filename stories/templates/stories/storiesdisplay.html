@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+*
+{
+    font-family: cursive ;
+}
+    .review{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    width: 100%;
+    padding: 20px 10px;
+    grid-column-gap:10px;
+    grid-row-gap:20px;
+}
+.review div {
+background-color:lavenderblush;
+width: 100%;
+border: 5px slateblue;
+padding: 50px;
+margin: 20px;
+}
+ 
+.user h3,h2,p{
+         padding:7px;
+         text-align:justify;
+ }
+.user h3,h2:hover{
+         transform:scale(1.04);
+}
+ .user info h3{
+         transform:scale(1.04);
+ }
+ button{
+     margin-left: 70em;
+     background-color:purple;
+     height: 11.5%;
+     width: 10%;
+     border-color: purple;
+     border-radius: 10%;
+ }
+ a{
+     text-decoration:solid;
+     color:white
+ }
+ </style>
+ </head>
+    <body style="background-color: white;">
+        <h1 style = "color:purple;">User Stories</h1>
+        <button><a href= "{% url 'post_create' %}"><b>Click The Link To Share Your Story</b></a></button>
+        {% for post in posts %}
+         <section class="review">
+             <div class="user">
+                
+                <h2>
+                      {{post.author}}
+                </h2>
+                <h3>
+                    {{post.caption}}
+                </h3>
+                <p>
+                    {{post.story}}
+                </p>
+                <h4>
+                    {{post.date_posted|date:"F d,Y"}}
+                </h4>
+                <hr>
+            </div>
+          </section>	
+        {% endfor %}
+             
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<head>
+    <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    
+    tr:nth-child(even){background-color:paleturquoise} 
+    
+    
+    th {
+      background-color:mediumvioletred;
+      color: white;
+    }
+    </style>
+    
+    
+    </head>
+    <h1 style="text-align:center"> </h1>
+    
+    
+    <table border="1">
+        {% for pp in cl %}
+    
+            <th>{{pp}}</th>
+    
+        {% endfor %}
+    
+    
+        {% for i in data %}
+       
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.rating}}</td>
+            <td>{{i.address}}</td>
+            <td><a href="{{i.links}}" target="_blank"> {{i.links}}</a></td>
+        </tr>
+    
+        {% endfor %}
+    
+    
+    
+    </table>
+    
+    

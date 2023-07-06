@@ -1,0 +1,116 @@
+{% load static %}
+<html>
+  <head>
+	<title> mental health </title>
+	<link rel="stylesheet" type= "text/css" href="{% static 'mywebsite/csstemplates/style.css' %}">
+  </head>
+  <body>
+      <header id="headimg">
+              <a href="#" style = "text-align:center;"><img id="logo" src="{% static 'mywebsite/images/new1.png' %}"></a>
+              <h1><b>Mental Well-Being</b></h1>
+            <br><br><br>
+            <div>
+            <nav>
+                <ul>
+                <a href="{% url 'showstories' %}"><li><b>Hope Stories</b></li></a>
+                <a href="{% url 'home' %}"><li><b>Get Help</b></li></a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}"><li><b>Log Out</b></li></a>
+                {% else %}
+                <a href ="{% url 'registerhome' %}"><li><b>Login/Register</b></li></a>
+                {% endif %}
+
+                
+                </ul>
+            </nav>
+        </div>
+        <div>
+          <img src = "{% static 'mywebsite/images/quotes2.avif' %}" id = "himage">
+          <div class="centered">
+            {% if messages %}
+              {% for message in messages %}
+                 <h2 style= "color:green;">{{message}}</h2>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </header>
+      
+      <main class = "mains">
+        <div class = "slideshow">
+          <script>
+            var i = 0;
+            var images = [];
+            var time = 3000;
+  
+            images[0] = '{% static "mywebsite/images/show1.svg" %}';
+            images[1] = '{% static "mywebsite/images/show2.svg" %}';
+            images[2] = '{% static "mywebsite/images/show3.svg" %}';
+            images[3] = '{% static "mywebsite/images/show4.svg" %}';
+            images[4] = '{% static "mywebsite/images/show5.svg" %}';
+            images[5] = '{% static "mywebsite/images/show6.svg" %}';
+            images[6] = '{% static "mywebsite/images/show7.svg" %}';
+            function changeImg(){
+              document.slide.src = images[i];
+              if(i < images.length - 1){
+                i++;
+              }
+              else{
+                i = 0;
+              }
+  
+  
+            }
+             window.onload = changeImg;
+          </script>
+          <img name = "slide" width = "1000" height = "400" style="margin-left: 9em;">
+          <button style = "margin-left:100em;margin-top:-15em;border-radius:100px;height:50px;width:50px;color:white;background-color:mediumvioletred;border:none;" onclick="changeImg()"><b>next</b></button>
+        </div>
+        <div class = "aboutc">
+          <h1 style="color:lightseagreen">Mental health is important</h1>
+          <ul class = "mainlist">
+            <li><img src = "{% static 'mywebsite/images/medmind.png' %}"><h2>Meditation Videos to Relax Your Mind</h2>
+             <h3>    Watch <span><a href = "https://personalexcellence.co/blog/meditation-music/">here</a></span> our pick of relaxing and calming videos to </h3><h3> de-stress your mind.</h3> 
+            </li>
+            <li><img src = "{% static 'mywebsite/images/browse-podcasts.png' %}"><h2>Listen to relaxing Podcasts</h3>
+              <h3><span><a href = "https://www.standard.co.uk/tech/best-podcasts-destress-relax-listen-a4337241.html">   Click here</a></span> for some best podcasts to de-stress</h2><h3> and soothe your frazzled mind.</h3> 
+             </li>
+             <li><img src = "{% static 'mywebsite/images/music.png' %}"><h2>Relaxing Music for Mental Health</h3>
+              <h3><span><a href = "https://personalexcellence.co/blog/meditation-music/">here</a></span>    listen to 111 Relaxing Sounds: Music Therapy for anxiety </h3><h3> & stress relief,
+                 calm down, relax & find inner peace, healing </h3><h3>meditation.</h3>
+                </h3> 
+             </li>
+             
+            </ul>
+        
+          <h1 style = "text-align:left;margin-left: 23em;margin-top: -10em;font-size: 29px; white-space: nowrap;padding:10px;">
+            "The Energy of mind is the Essense of life"</h1>
+
+
+            <h2 style = "text-align:left;margin-left: 23em;font-size: 29px; white-space: nowrap;padding:10px;">Mental Health is the profound wellness</h2><h2 style = "text-align:left;margin-left: 23em;font-size: 29px; margin-top:-1em;white-space: nowrap;padding:10px;"> in a person's state of mind</h2>.
+
+            <h2 style = "text-align:left;margin-left: 23em;margin-top:-1em;font-size: 29px; white-space: nowrap;padding:10px">Maintainig a good Mental state is important !</h2>
+          </h1>
+        </div>
+      </main>
+      <div class="about-section">
+        <h1 style="font-family: cursive;">About Us Page</h1><br><hr>
+        <h2 style="font-family: cursive;">Social Relavant Project</h2><br>
+        <h2 style="font-family: cursive;">GUIDE:<br> MR.S.Girinath<br>
+          Associate professor<br>
+          Computer Science Engineering<br>
+          Narayana Engineering college
+          </h2><br>
+        <h2 style="font-family: cursive;">TEAM MEMBERS:</h3><br>
+        <ul>
+          <li><h2 style="font-family: cursive;">Nalliboina Ramya</h2></li>
+          <li><h2 style="font-family: cursive;">Shaik Anmol</h2></li>
+          <li><h2 style="font-family: cursive;">Pigilam Bhargavi </h2></li>
+          <li><h2 style="font-family: cursive;">Thaluchuri Monika Tanmai</h2></li>
+          <li><h2 style="font-family: cursive;">Musali Yeshaswi</h2></li>
+        </ul>
+  
+      </div>
+	
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+    <head>
+        <link rel = "stylesheet type = "text\css" href= "{% static 'register/csstemplate/loginstyle.css' %}">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-1">
+                <div class="form-box">
+                    <div class="form">
+                        <form method = "POST">
+                        <h1 class = "main-heading">Login</h1>
+                            {% csrf_token %}
+                            {{form}}
+                            <button type = "submit" style="font-size: 100%;">Login</button>
+                           <h3>Need An Account</h3><a href = "{% url 'registerhome' %}" style="text-decoration: none; color: white;font-size: 120%;">Sign Up/Register</a> 
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

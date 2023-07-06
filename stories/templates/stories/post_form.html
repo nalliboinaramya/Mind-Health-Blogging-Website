@@ -1,0 +1,110 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*
+{
+  box-sizing: border-box;
+}
+body{
+ 
+  background-image:url("{% static 'stories/images/Share_your_story1.jpeg' %}");
+    
+    height :100%;
+    width :100%;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    
+
+}
+#image{
+  
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    margin-left:0em;
+    height :40%;
+    width :100%;
+}
+
+.form-box
+
+{
+     
+    width: 700px;
+
+	height: 500px;
+
+	position: relative;
+
+    margin-top: 1em;
+
+    margin-left: 17em;
+   color:purple;
+   font-size:large;
+   background-color:rgb(175, 238, 238,0.6)
+   
+ 
+	
+
+
+}
+.form
+{
+  position: relative;
+  text-align: left;
+
+}
+input{
+  border-radius: 5px;
+  width:98%;
+  height:7%;
+  padding: 10px;
+  margin: 10px;
+  border-color: black;
+  
+}
+textarea{
+  border-radius: 5px;
+  width:98%;
+  height:25%;
+  padding: 10px;
+  margin: 10px;
+  border-color:white;
+
+}
+button{
+  margin-left:1em;
+  margin-top: 2em;
+  height: 40px;
+  border-radius: 10%;
+  background-color:skyblue;
+  border-color:skyblue;
+  color: rgb(100, 62, 100);
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+                    <div class="form-box">
+                        <form class = "form" method = "POST">
+                          {% csrf_token %}
+                          <h1 style="text-align: center;color: rgb(100, 62, 100);">Write Your Story </h1>
+				                   {{form}}
+                           <button><b>POST</b></button>
+				                </form>
+                         
+                    </div>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<h1 style="text-align:center">Available Jobs in {{loc_}}  </h1>
+
+
+<table border = "4" cellpadding = "5" cellspacing = "5">
+    {% for pp in cl %}
+
+    	<td>{{pp}}</td>
+
+	{% endfor %}
+
+
+    {% for i in data %}
+   
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.ratings}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.link}}</td>
+        <td><a href="{{i.Link}}" target="_blank" > {{i.Link}}</a></td>
+    </tr>
+
+    {% endfor %}
+
+
+
+</table>
+

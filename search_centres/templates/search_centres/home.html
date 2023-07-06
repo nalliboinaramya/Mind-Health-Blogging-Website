@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+  <head>
+  
+    </style>
+  </head>
+<body style = "background-color:paleturquoise">
+  <h1 style= "text-align: center;">Search For Help</h1>
+
+  <form method="GET" >
+
+ 
+
+    <div>
+      <br>
+
+      <label for="location"><b> Location</b></label><br>
+      <input type="text" placeholder="Enter Location" name="location" id="location" required>
+      
+      <br><br>
+        <label for="searchtype"><b>physcriatrists/yoga centres</b></label><br>
+      <input type="text" placeholder="Enter search type" name="searchtype" id="searchtype" required>
+
+
+      <br><hr>
+      
+      <a href = "{% url 'home' %}"><button type="submit" id="search">Search</button></a>
+
+    </div>
+  </form>
+  {% if var == 1 %}
+  <h1>searched for {{searchtype}} at loaction {{loc}}  </h1>
+  {% endif %}
+  <div class="container">
+    <a href="{% url 'yoga_centres' %}">
+    <button>View Result</button>
+    </a>
+</div>
+<br>
+    <div>
+      <a href="{% url 'index' %}">
+      <button type="button" class="cancelbtn">Cancel</button>
+    </a>
+    </div>
+</body>
+</html>
